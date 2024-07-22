@@ -212,7 +212,7 @@
                 let listhistory = document.getElementById("beatmap-list-history");
                 localforage.getItem("playhistory1000", function(err, item) {
                     if (err) {
-                        listhistory.innerText = "游玩记录加载失败";
+                        listhistory.innerText = "Failed to load your play history";
                         return;
                     }
                     if (item && item.length) {
@@ -227,7 +227,7 @@
                             addBeatmapSid(sid[i], listhistory)
                     }
                     else {
-                        listhistory.innerText = "你还没有玩过一首歌曲哦！单击曲目，待加载完成后选择难度即开始游玩。";
+                        listhistory.innerText = "You haven't played a song yet! Click on the track, select the difficulty when the load is complete, and start playing.";
                     }
                 })
             }
@@ -252,7 +252,7 @@
             if (window.localforage) {
                 window.localforage.getItem("likedsidset", function(err, val){
                     if (err) {
-                        document.getElementById("beatmap-list-liked").innerText = "收藏夹加载失败。";
+                        document.getElementById("beatmap-list-liked").innerText = "Favorites failed to load。";
                         return;
                     }
                     if (val && val.size) {
@@ -262,7 +262,7 @@
                             addBeatmapSid(list[i], listlike);
                     }
                     else {
-                        document.getElementById("beatmap-list-liked").innerText = "你还没有收藏一首歌曲哦！点击曲目右下角的爱心以收藏这个曲目。";
+                        document.getElementById("beatmap-list-liked").innerText = "You haven't bookmarked a song yet! Click on the heart in the bottom right corner of the track to bookmark it.";
                     }
                 });
             }
